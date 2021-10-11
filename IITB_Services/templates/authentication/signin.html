@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style1.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1>This is a sign in page</h1>
+    <form action="/signin" method="POST">
+        {%csrf_token%}
+        <label for="">Username</label>
+        <input type="text" id='username' name="username" placeholder="Enter Username" required>
+        <br>
+        <label for="">Password</label>
+        <input type="password" id='password' name="password" placeholder="Enter password" required>
+        <br>
+        <button type="submit">Sign In</button>
+    </form> -->
+    <div id="wrapper">
+        <div id="left">
+            <div id="signin">
+                <div id="logo">
+                    <img src="{% static 'images/IIT_Bombay_color_logo.png' %}" alt="IITB LOGO" >
+                </div>
+                <h1>Welcome to IITB Services by ADV</h1>
+                <form action="/signin" method="POST">
+                    {%csrf_token%}
+                    <div>
+                        <label>Email or Username</label>
+                        <input type="text" class="text-input" name= 'username' placeholder="Enter Username or rollno.">
+                    </div>
+                    <div>
+                        <label>Password</label>
+                        <input type="text" class="text-input" name="password" placeholder="Enter password">
+                    </div>
+                    <button type="submit" class="primary-btn">Sign In</button>
+                </form>
+            </div>
+            <div class="or">
+                <hr class ='bar'>
+                <span>OR</span>
+                <hr class='bar'>
+            </div>
+            <a href="/signup" class='btn btn-success'>Sign Up</a>
+            <footer id='main-footer'>
+                <p>Copyright &copy; 2021, Dishank,Ashish,Vivek All Rights Reserved</p>
+            </footer>
+        </div>
+        <div id="right">
+            
+        </div>
+    </div>
+</body>
+</html>
