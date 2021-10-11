@@ -6,7 +6,7 @@ from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
 def home(requests):
-    return render(requests,"authentication/index.html")
+    return render(requests,"authentication/signin.html")
 
 
 def signup(request):
@@ -35,7 +35,7 @@ def signup(request):
         myuser.last_name=lname
         myuser.save()
         messages.success(request,'Your account has been successfully created')
-        return redirect("signin")
+        return redirect("")
 
     return render(request,"authentication/signup.html")
 
