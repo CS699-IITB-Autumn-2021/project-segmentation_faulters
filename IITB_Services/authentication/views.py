@@ -1,4 +1,5 @@
 
+from django.http import request
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -7,6 +8,10 @@ from django.contrib.auth import authenticate, login, logout
 # Create your views here.
 def home(requests):
     return render(requests,"authentication/signin.html")
+
+
+def afterlogin(request):
+    return render(request,"authentication/index.html")
 
 
 def signup(request):
@@ -49,7 +54,8 @@ def signin(request):
         if user is not None:
             login(request,user)
             fname = user.first_name
-            return render(request,"authentication/index.html",{'fname':fname})
+            return redirect('afterlogin')
+            # return render(request,"authentication/index.html",{'fname':fname})
         else:
             messages.error(request,"BAD Credentials")
             return redirect('home')

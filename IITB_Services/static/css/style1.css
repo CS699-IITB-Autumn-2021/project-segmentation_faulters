@@ -87,6 +87,7 @@ form div{
 
 #wrapper{
     display: flex;
+    height: 100vh;
 }
 #signin h1{
     margin-top: 4rem;
