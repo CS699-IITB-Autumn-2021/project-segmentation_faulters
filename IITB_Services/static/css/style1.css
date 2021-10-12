@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@700&display=swap');
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    
+    color: white;
+    
+    
+}
+#left{
+    flex: 1;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+    /* background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,77,77,1) 35%, rgba(0,212,255,1) 100%); */
+    background-color:#000;
+background-image:
+radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+}
+#signin{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+#left img{
+    height: 150px;
+    width: 150px;
+    margin-top: 1.5rem;
+    padding: 10px;
+    border: solid 3px white;
+    border-radius: 10%;
+    
+
+}
+form{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 70%;
+    
+}
+form div{
+
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: center;
+    
+}
+
+#right{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000;
+   
+}
+#right .right-header{
+    flex: 1;
+}
+#right #carouselExampleIndicators{
+    flex: 9;
+}
+
+.carousel-inner{
+    height: 100%;
+}
+.carousel-item{
+    height: 100%;
+}
+.carousel-item img{
+    height: 100%;
+}
+
+
+#wrapper{
+    display: flex;
+}
+#signin h1{
+    margin-top: 4rem;
+    color: #fff; font-family: 'Righteous', cursive; font-size: 65px; font-weight: normal; line-height: 60px; margin: 10px 0 20px; text-transform: uppercase; text-shadow: 2px 2px 0 #000; margin: 10px 0 24px; text-align: center; 
+}
+
+div h1{
+    animation: zoomup 1s ease infinite;
+    animation-delay: calc(300ms);
+    padding-top: 1rem;
+}
+@keyframes zoomup {
+    10% {
+      color: #fff;
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+    }
+  
+    
+  
+    12% {
+      color: #fff;
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+    }
+  
+    
+    55% {
+      color: #fff;
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+    }
+  
+  
+    57% {
+      color: #fff;
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+    }
+  }
+  
+input{
+    height: 40px;
+    border: rgb(3, 90, 112) 3px solid;
+    background-color: rgb(215, 239, 242);
+    margin-top: 10px;
+}
+#signin label{
+    color: white;
+}
+
+
+hr{
+    color: white;
+}
+span{
+    color: white;
+}
+.primary-btn{
+    display: block;
+    padding: 0.7rem;
+    height: 2.7rem;
+    
+    background-color: rgb(9, 119, 101);
+    color: white;
+    text-align: center;
+    border: white 3px solid;
+    font-weight: 400;
+    margin-top: 7px;
+}
+
+.primary-btn:hover{
+    background-color: rgb(1, 36, 24);
+}
+
+
+.btn{
+    width: 70%;
+    
+}
+#main-footer
+{
+    color: #fff;
+    margin: 1rem 0px;
+}
+
+h2{
+    font-family: 'Teko', sans-serif;
+    font-weight: 700;
+}
+
+.or{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px;
+}
+
+.or .bar{
+    height: 3px;
+    width: 70px;
+    color: #fff;
+}
+.or span{
+    margin: 0px 1rem;
+}
+
+.new-user{
+    color: #fff;
+    margin-top: 20px;
+    font-size: 20px;
+}
+.right-header{
+    text-align: center;
+    size: 40px;
+    text-decoration: solid;
+    font-family: 'Teko', sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    color: white;
+    margin-top: 10px;
+    
+}
+
+@media (min-width:1200px){
+    #left{
+        flex: 5;
+    }
+    #right{
+        flex: 6;
+    }
+}
+@media (max-width:900px){
+    #wrapper{
+        flex-direction: column;
+    }
+}
