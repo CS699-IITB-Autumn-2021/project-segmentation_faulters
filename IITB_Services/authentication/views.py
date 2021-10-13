@@ -24,16 +24,24 @@ def signup(request):
         password=request.POST['password']
         cpassword=request.POST['cpassword']
 
-
+        message=""
         if User.objects.filter(username=username):
             messages.error(request,"Username already exists")
-            return redirect('home')
+            # return redirect('home')
+            message="Username already exists"
+            return render(request,'authentication/signup.html',{'message':message})
         if User.objects.filter(email=email):
             messages.error(request,"Email already exists")
-            return redirect('home')
+            # return redirect('home')
+            message="Email already exists"
+            return render(request,'authentication/signup.html',{'message':message})
+
         if password!=cpassword:
             messages.error(request,"Password didn't matched")
-            return redirect('home')
+            # return redirect('home')
+            message="Password didn't matched"
+            return render(request,'authentication/signup.html',{'message':message})
+
 
         myuser=User.objects.create_user(username,email,password)
         myuser.first_name=fname
@@ -54,11 +62,14 @@ def signin(request):
         if user is not None:
             login(request,user)
             fname = user.first_name
-            return redirect('afterlogin')
+            return render(request,'authentication/index.html',{'fname':fname})
+            #return redirect('afterlogin')
             # return render(request,"authentication/index.html",{'fname':fname})
         else:
-            messages.error(request,"BAD Credentials")
-            return redirect('home')
+            # messages.error(request,"BAD Credentials")
+            # return redirect('home')
+            message="Invalid Username or password"
+            return render(request,'authentication/signin.html',{'message':message})
     return render(request,"authentication/signin.html")
 
 
