@@ -1,17 +1,28 @@
 
 from django.http import request
+from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
+from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from .models import *
 
 # Create your views here.
 def home(requests):
+    
     return render(requests,"authentication/signin.html")
 
 
 def afterlogin(request):
-    return render(request,"authentication/index.html")
+    if request.user.is_anonymous:
+        return redirect('home')
+    fname=request.user.first_name
+    last_name=request.user.last_name
+    g=Gulmohar.objects.all()
+
+    return render(request,"authentication/index.html" ,{'fname':fname,
+    'lname':last_name,'gul':g} )
 
 
 def signup(request):
@@ -62,7 +73,8 @@ def signin(request):
         if user is not None:
             login(request,user)
             fname = user.first_name
-            return render(request,'authentication/index.html',{'fname':fname})
+            return redirect('afterlogin')
+            # return render(request,'authentication/index.html',{'fname':fname})
             #return redirect('afterlogin')
             # return render(request,"authentication/index.html",{'fname':fname})
         else:
