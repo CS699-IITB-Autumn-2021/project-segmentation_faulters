@@ -22,7 +22,14 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     
     </head>
-    <body>
+    <body style="background-color: #000;
+    background-image:
+radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;">
         <div id="wrapper">
             <div id="left">
                 <div id="signin">
@@ -30,6 +37,7 @@
                         <img src="{% static 'images/IIT_Bombay_color_logo.png' %}" alt="IITB LOGO" >
                     </div>
                     <h1>Welcome to IITB Services by ADV</h1>
+                    <h3 style="color: white;">{{ message }}</h3>
                     <form action="/signup" method="POST">
                         {%csrf_token%}
                         

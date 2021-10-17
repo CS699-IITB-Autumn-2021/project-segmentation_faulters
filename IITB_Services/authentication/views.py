@@ -1,17 +1,42 @@
 
 from django.http import request
+from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
+from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from .models import *
 
 # Create your views here.
 def home(requests):
+    
     return render(requests,"authentication/signin.html")
 
 
+def grocery(request):
+    if request.user.is_anonymous:
+        return redirect('home')
+    return render(request,"authentication/grocery.html")
+
+
+def grocery_h10(request):
+    if request.user.is_anonymous:
+        return redirect('home')
+    return render(request,"authentication/grocery_h10.html")
+
+
+
+
 def afterlogin(request):
-    return render(request,"authentication/index.html")
+    if request.user.is_anonymous:
+        return redirect('home')
+    fname=request.user.first_name
+    last_name=request.user.last_name
+    g=Gulmohar.objects.all()
+
+    return render(request,"authentication/index.html" ,{'fname':fname,
+    'lname':last_name,'gul':g} )
 
 
 def signup(request):
@@ -24,16 +49,24 @@ def signup(request):
         password=request.POST['password']
         cpassword=request.POST['cpassword']
 
-
+        message=""
         if User.objects.filter(username=username):
             messages.error(request,"Username already exists")
-            return redirect('home')
+            # return redirect('home')
+            message="Username already exists"
+            return render(request,'authentication/signup.html',{'message':message})
         if User.objects.filter(email=email):
             messages.error(request,"Email already exists")
-            return redirect('home')
+            # return redirect('home')
+            message="Email already exists"
+            return render(request,'authentication/signup.html',{'message':message})
+
         if password!=cpassword:
             messages.error(request,"Password didn't matched")
-            return redirect('home')
+            # return redirect('home')
+            message="Password didn't matched"
+            return render(request,'authentication/signup.html',{'message':message})
+
 
         myuser=User.objects.create_user(username,email,password)
         myuser.first_name=fname
@@ -55,10 +88,14 @@ def signin(request):
             login(request,user)
             fname = user.first_name
             return redirect('afterlogin')
+            # return render(request,'authentication/index.html',{'fname':fname})
+            #return redirect('afterlogin')
             # return render(request,"authentication/index.html",{'fname':fname})
         else:
-            messages.error(request,"BAD Credentials")
-            return redirect('home')
+            # messages.error(request,"BAD Credentials")
+            # return redirect('home')
+            message="Invalid Username or password"
+            return render(request,'authentication/signin.html',{'message':message})
     return render(request,"authentication/signin.html")
 
 
