@@ -14,6 +14,20 @@ def home(requests):
     return render(requests,"authentication/signin.html")
 
 
+def grocery(request):
+    if request.user.is_anonymous:
+        return redirect('home')
+    return render(request,"authentication/grocery.html")
+
+
+def grocery_h10(request):
+    if request.user.is_anonymous:
+        return redirect('home')
+    return render(request,"authentication/grocery_h10.html")
+
+
+
+
 def afterlogin(request):
     if request.user.is_anonymous:
         return redirect('home')
