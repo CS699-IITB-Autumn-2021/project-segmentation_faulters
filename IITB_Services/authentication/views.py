@@ -106,3 +106,8 @@ def signout(request):
 
 def base(request):
     return render(request,'authentication/base.html')
+
+
+
+def gulmohar(request):
+    return render(request,'authentication/gulmohar.html')
