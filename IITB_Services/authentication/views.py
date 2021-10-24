@@ -137,7 +137,8 @@ def base(request):
 
 
 def gulmohar(request):
-    return render(request,'authentication/gulmohar.html')
+    g= Gulmohar.objects.all()
+    return render(request,'authentication/gulmohar.html',{'gul':g } )
 
 
 def hair(request):

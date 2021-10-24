@@ -7,7 +7,7 @@ class Gulmohar(models.Model):
     item_name=models.CharField(max_length=30)
     availability=models.BooleanField(default=True)
     price=models.IntegerField()
-    image_src=models.CharField(max_length=200,default="hello")
+    image_src=models.ImageField()
 
 
 
