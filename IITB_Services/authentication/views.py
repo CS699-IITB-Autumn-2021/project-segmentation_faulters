@@ -8,10 +8,33 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from .models import *
 
+def toggle(request):
+    print("you are here")
+    item_name = request.POST['item']
+    print(item_name)
+    g=Gulmohar.objects.get(item_name=item_name)
+
+    check = g.availability
+    
+    if check==True:
+        g.availability = False
+    else:
+        g.availability=True
+
+    g.save()
+
+    return redirect("gulmohar_updation")
+
+
 # Create your views here.
 def home(requests):
     
     return render(requests,"authentication/signin.html")
+
+
+def gulmohar_updation(request):
+    g = Gulmohar.objects.all()
+    return render(request,'authentication/gulmohar_updation.html',{'gul':g})
 
 
 def grocery(request):
@@ -87,6 +110,8 @@ def signin(request):
         if user is not None:
             login(request,user)
             fname = user.first_name
+            if user.username=="gulmohar":
+                return redirect('gulmohar_updation')
             return redirect('afterlogin')
             # return render(request,'authentication/index.html',{'fname':fname})
             #return redirect('afterlogin')
