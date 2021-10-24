@@ -112,6 +112,8 @@ def signin(request):
             fname = user.first_name
             if user.username=="gulmohar":
                 return redirect('gulmohar_updation')
+            elif user.username=="hairsalon":
+                return redirect('hairsalon_admin')
             return redirect('afterlogin')
             # return render(request,'authentication/index.html',{'fname':fname})
             #return redirect('afterlogin')
@@ -142,3 +144,6 @@ def hair(request):
     if request.user.is_anonymous:
         return redirect('home')
     return render(request,"authentication/hair.html")
+
+def hairsalon_admin(request):
+    return render(request,'authentication/hairsalon_admin.html')

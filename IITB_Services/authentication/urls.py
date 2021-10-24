@@ -15,5 +15,6 @@ urlpatterns = [
     path('gulmohar_updation',views.gulmohar_updation,name="gulmohar_updation"),
     path('toggle',views.toggle,name="toggle"),
     path('hair',views.hair,name='hair'),
+    path('hairsalon_admin',views.hairsalon_admin,name="hairsalon_admin"),
 
 ]
