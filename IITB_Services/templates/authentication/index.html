@@ -1,71 +1,64 @@
-{% extends "authentication/base.html" %}
-{% load static %}
+{% extends "authentication/base.html" %} {% load static %} {% block content %}
 
+<h3 style="color: red; text-align:center; margin-top:100px;">Hello {{fname}} {{lname}} Welcome to IITB Services</h3>
 
+{% endblock %} {% block conten %}
 
-{% block content %}
-    
-    <h3 style="color: red; text-align:center; margin-top:100px;">Hello {{fname}} {{lname}} Welcome to IITB Services</h3>
-    
-{% endblock %}
-
-
-{% block conten %}
-    
 <div class="container">
     <div class="row">
-      <div class="col-lg-4 " style="padding: 5px;">
-        <div class="card-service wow fadeInUp rounded border border-info" style="padding: 5px;">
-          <div class="header">
-            <center><img src="{% static 'images/Gulu4.JPG' %}" alt="" class="rounded-circle" height="200px" width="200px" ></center>
-          </div>
-          <div class="body">
-            <h5 class="text-secondary" style="text-align: center;">Gulmohar</h5>
-            <p class="text-center">Select this to place order through Gulmohar</p>
-            <center><a href="/gulmohar" class="btn btn-primary" >Select</a></center>
-          </div>
+        <div class="col-lg-4 " style="padding: 5px;">
+            <div class="card-service wow fadeInUp rounded border border-info" style="padding: 5px;">
+                <div class="header">
+                    <center><img src="{% static 'images/Gulu4.JPG' %}" alt="" class="rounded-circle" height="200px" width="200px"></center>
+                </div>
+                <div class="body">
+                    <h5 class="text-secondary" style="text-align: center;">Gulmohar</h5>
+                    <p class="text-center">Select this to place order through Gulmohar</p>
+                    <center><a href="/gulmohar" class="btn btn-primary">Select</a></center>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-lg-4 " style="padding: 5px;">
-        <div class="card-service wow fadeInUp rounded border border-info" style="padding: 5px;">
-          <div class="header" >
-            <center><img src="{% static 'images/Haircut2.JPG' %}" alt="" class="rounded-circle" height="200px" width="200px" ></center>
-          </div>
-          <div class="body">
-            <h5 class="text-secondary" style="text-align: center;">HairSalon</h5>
-            <p class="text-center">Select this to book an appointment!</p>
-            <center><a href="h1.html" class="btn btn-primary" >Select</a></center>
-          </div>
+        <div class="col-lg-4 " style="padding: 5px;">
+            <div class="card-service wow fadeInUp rounded border border-info" style="padding: 5px;">
+                <div class="header">
+                    <center><img src="{% static 'images/Haircut2.JPG' %}" alt="" class="rounded-circle" height="200px" width="200px"></center>
+                </div>
+                <div class="body">
+                    <h5 class="text-secondary" style="text-align: center;">HairSalon</h5>
+                    <p class="text-center">Select this to book an appointment!</p>
+                    <center><a href="/hair" class="btn btn-primary">Select</a></center>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-lg-4 " style="padding: 5px;" >
-        <div class="card-service wow fadeInUp rounded border border-info" style="padding: 5px; ">
-          <div class="header">
-            <center><img src="{% static 'images/grocery/grocery.png' %}" alt="" class="rounded-circle" height="200px" width="200px" ></center>
+        <div class="col-lg-4 " style="padding: 5px;">
+            <div class="card-service wow fadeInUp rounded border border-info" style="padding: 5px; ">
+                <div class="header">
+                    <center><img src="{% static 'images/grocery/grocery.png' %}" alt="" class="rounded-circle" height="200px" width="200px"></center>
+                </div>
+                <div class="body">
+                    <h5 class="text-secondary" style="text-align: center;">Grocery Store</h5>
+                    <p class="text-center">Select this to shop from Grocery store</p>
+                    <center><a href="/grocery" class="btn btn-primary">Select</a></center>
+                </div>
+            </div>
         </div>
-        <div class="body">
-          <h5 class="text-secondary" style="text-align: center;">Grocery Store</h5>
-          <p class="text-center">Select this to shop from Grocery store</p>
-          <center><a href="/grocery" class="btn btn-primary" >Select</a></center>
-          </div>
+        <div class="col-lg-4 " style="padding: 5px;">
+            <div class="card-service wow fadeInUp rounded border border-info" style="padding: 5px;">
+                <div class="header">
+                    <center><img src="{% static 'images/4.png' %}" alt="" class="rounded-circle" height="200px" width="200px"></center>
+                </div>
+                <div class="body">
+                    <h5 class="text-secondary" style="text-align: center;">Badminton</h5>
+                    <p class="text-center">Select this to book an appointment</p>
+                    <center><a href="https://gymkhana.iitb.ac.in/~sports/index.php?r=site/courtbooking" class="btn btn-primary">Select</a></center>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-lg-4 " style="padding: 5px;">
-        <div class="card-service wow fadeInUp rounded border border-info" style="padding: 5px;">
-          <div class="header" >
-            <center><img src="{% static 'images/4.png' %}" alt="" class="rounded-circle" height="200px" width="200px" ></center>
-          </div>
-          <div class="body">
-            <h5 class="text-secondary" style="text-align: center;">Badminton</h5>
-            <p class="text-center">Select this to book an appointment</p>
-            <center><a href="h1.html" class="btn btn-primary" >Select</a></center>
-          </div>
-        </div>
-      </div>
     </div>
-  </div> <!-- .container -->
+</div>
+<!-- .container -->
 {% endblock %}
-    
+
 
 <!-- <!DOCTYPE html>
 <html lang="en">
@@ -101,4 +94,3 @@
         
 </body>
 </html> -->
-

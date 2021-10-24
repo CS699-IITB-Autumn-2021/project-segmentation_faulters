@@ -14,5 +14,6 @@ urlpatterns = [
     path('gulmohar',views.gulmohar,name="gulmohar"),
     path('gulmohar_updation',views.gulmohar_updation,name="gulmohar_updation"),
     path('toggle',views.toggle,name="toggle"),
+    path('hair',views.hair,name='hair'),
 
 ]

@@ -1,0 +1,246 @@
+{% extends "authentication/base.html" %} {% load static %} {% block content %}
+
+<!-- <script src="{% static '/css/hair.css' %}"></script> -->
+<h3 style="color: red; text-align:center; margin-top:100px;"></h3>
+
+<style>
+    .slide {
+        align-items: center;
+        width: 80%;
+        height: 80vh;
+        vertical-align: middle;
+        margin-left: auto;
+        margin-right: auto;
+        border: 0.5vh solid black;
+    }
+    
+    hr {
+        height: 10px;
+        background-color: black;
+        border: none;
+    }
+    
+    #Services {
+        margin: auto;
+        background-color: lavenderblush;
+        margin-top: 3vh;
+        margin-bottom: 5vh;
+        text-align: left;
+        border-collapse: collapse;
+        box-shadow: 0px 0px 15px 4px gray;
+    }
+    
+    th {
+        text-align: center;
+        border: solid 2px black;
+        padding: 10px;
+    }
+    
+    td {
+        border: solid 1px black;
+        padding: 5px;
+    }
+    
+    #butt {
+        text-align: center;
+    }
+    
+    .button {
+        border-radius: 100px;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        display: inline-block;
+        font-size: 17px;
+        margin: 4px 2px;
+        transition-duration: 0.3s;
+        cursor: pointer;
+    }
+    
+    .submit {
+        background-color: white;
+        color: black;
+        text-align: center;
+        border: 2px solid blue;
+    }
+    
+    .submit:hover {
+        background-color: rgb(63, 211, 63);
+        color: white;
+    }
+    
+    .clear {
+        background-color: white;
+        color: black;
+        text-align: center;
+        border: 2px solid blue;
+    }
+    
+    .clear:hover {
+        background-color: rgb(245, 53, 53);
+        color: white;
+    }
+</style>
+
+
+
+{% endblock %}
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hair Salon</title>
+    <link rel="stylesheet" href="hair.css">
+</head> -->
+
+{% block conten %}
+<div id="title" style="text-align: center; text-shadow: 2px 2px 3px brown; font-size: x-large; font-weight: bold;">
+    <hr> STYLES STUDIO - Gents PARLOUR
+    <hr>
+</div>
+<section>
+    <img class="slide" src="{% static '/images/haircut/IMG_1748.JPG' %}">
+    <img class="slide" src="{% static '/images/haircut/IMG_1749.JPG' %}">
+    <img class="slide" src="{% static '/images/haircut/IMG_1750.JPG' %}">
+    <img class="slide" src="{% static '/images/haircut/IMG_1751.JPG' %}">
+    <img class="slide" src="{% static '/images/haircut/IMG_1752.JPG' %}">
+    <img class="slide" src="{% static '/images/haircut/IMG_1753.JPG' %}">
+    <img class="slide" src="{% static '/images/haircut/IMG_1754.JPG' %}">
+    <img class="slide" src="{% static '/images/haircut/IMG_1755.JPG' %}">
+    <img class="slide" src="{% static '/images/haircut/IMG_1756.JPG' %}">
+    <img class="slide" src="{% static '/images/haircut/IMG_1757.JPG' %}">
+</section>
+
+
+<script>
+    // change image in 2 secs
+    var i = 0;
+    myCarousel();
+
+    function myCarousel() {
+        var j;
+        var x = document.getElementsByClassName("slide");
+        for (j = 0; j < x.length; j++) {
+            x[j].style.display = "none";
+        }
+        i++;
+        if (i > x.length) {
+            i = 1
+        }
+        x[i - 1].style.display = "block";
+        setTimeout(myCarousel, 2000);
+    }
+</script>
+
+<table id="Services">
+    <tr>
+        <th>Services</th>
+        <th>Price(Rs.)</th>
+        <th>Select</th>
+    </tr>
+    <tr>
+        <td>Hair Cut</td>
+        <td>150</td>
+        <td><input type="checkbox" id="checkbox"></td>
+    </tr>
+    <tr>
+        <td>Shave/Trim</td>
+        <td>150</td>
+        <td><input type="checkbox" id="checkbox"></td>
+    </tr>
+    <tr>
+        <td>Head Massage</td>
+        <td>150</td>
+        <td><input type="checkbox" id="checkbox"></td>
+    </tr>
+    <tr>
+        <td>Hair Colour/Hair Highlihght</td>
+        <td>150</td>
+        <td><input type="checkbox" id="checkbox"></td>
+    </tr>
+    <tr>
+        <td>Hair Smoothing</td>
+        <td>150</td>
+        <td><input type="checkbox" id="checkbox"></td>
+    </tr>
+    <tr>
+        <td>Hair SPA</td>
+        <td>150</td>
+        <td><input type="checkbox" id="checkbox"></td>
+    </tr>
+    <tr>
+        <td>Hair Fall Treatment</td>
+        <td>150</td>
+        <td><input type="checkbox" id="checkbox"></td>
+    </tr>
+    <tr>
+        <td>Bleach/Facial</td>
+        <td>150</td>
+        <td><input type="checkbox" id="checkbox"></td>
+    </tr>
+    <tr>
+        <td>Face Massage/Clean-up</td>
+        <td>150</td>
+        <td><input type="checkbox" id="checkbox"></td>
+    </tr>
+    <tr>
+        <td>Mundan Ceremony</td>
+        <td>150</td>
+        <td><input type="checkbox" id="checkbox"></td>
+    </tr>
+    <tr>
+        <td>Makeup for wedding anniversary</td>
+        <td>150</td>
+        <td><input type="checkbox" id="checkbox"></td>
+    </tr>
+    <tr>
+        <td>Body Massage</td>
+        <td>150</td>
+        <td><input type="checkbox" id="checkbox"></td>
+    </tr>
+    <tr>
+        <td>Full Body Trimming/ DE-Tan</td>
+        <td>150</td>
+        <td><input type="checkbox" id="checkbox"></td>
+    </tr>
+    <tr>
+        <td>Bridal/Groom Makeup</td>
+        <td>150</td>
+        <td><input type="checkbox" id="checkbox"></td>
+    </tr>
+    <tr>
+        <td>Make Up for Birthday</td>
+        <td>150</td>
+        <td><input type="checkbox" id="checkbox"></td>
+    </tr>
+    <tr>
+        <td>Make Up for Interview</td>
+        <td>150</td>
+        <td><input type="checkbox" id="checkbox"></td>
+    </tr>
+    <tr>
+        <td>Make Up for Parties</td>
+        <td>150</td>
+        <td><input type="checkbox" id="checkbox"></td>
+    </tr>
+</table>
+
+<script>
+    function confirmation() {
+        alert("ashish");
+    }
+
+    function clear_() {
+        alert("dbsjdhb");
+    }
+</script>
+
+<div id="butt">
+    <button class="button submit" onclick="confirmation()">Submit</button>
+    <button class="button clear" onclick="clear_()">Clear</button>
+</div>
+{% endblock %}

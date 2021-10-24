@@ -136,3 +136,9 @@ def base(request):
 
 def gulmohar(request):
     return render(request,'authentication/gulmohar.html')
+
+
+def hair(request):
+    if request.user.is_anonymous:
+        return redirect('home')
+    return render(request,"authentication/hair.html")
