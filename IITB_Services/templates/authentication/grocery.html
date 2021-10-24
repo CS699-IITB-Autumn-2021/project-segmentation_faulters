@@ -1,0 +1,88 @@
+{% extends "authentication/base.html" %}
+{% load static %}
+
+{% block content %}
+    
+<h3 style="color: red; text-align:center; margin-top:100px;"></h3>
+
+
+{% endblock %}
+  {% block conten %}
+  <!-- Back to top button -->
+  <div class="back-to-top"></div>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky" data-offset="500">
+      <div class="container">
+        <!-- <a href="index.html" class="navbar-brand">Back to <span class="text-primary">Home</span></a> -->
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="page-banner home-banner">
+        <div class="row align-items-center flex-wrap-reverse h-100">
+          <div class="col-md-6 py-5 wow fadeInLeft">
+            <h1 class="mb-4">First choose the hostel's Store!</h1>
+            <p class="text-lg text-grey mb-5">Then add orders to your cart</p>  
+          </div>
+          <div class="col-md-6 py-5 wow zoomIn">
+            <div class="img-fluid text-center">
+              <img src="{%static 'images/grocery/hostel.png' %}" alt="" />
+            </div>
+          </div>
+        </div>
+        <a href="#choose" class="btn-scroll" data-role="smoothscroll"><span class="mai-arrow-down"></span></a>
+      </div>
+    </div>
+  </header>
+  <div class="page-section"  id="choose">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card-service wow fadeInUp">
+            <div class="header">
+              <img src="{%static 'images/grocery/h10.jpg' %}"  width="200" height="200"alt="">
+            </div>
+            <div class="body">
+              <h5 class="text-secondary">H10</h5>
+              <p>Select this to shop from H10 General store</p>
+              <a href="/grocery_h10"    class="btn btn-primary">Select</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card-service wow fadeInUp">
+            <div class="header">
+              <img src="{%static 'images/grocery/h12.png' %}"   width="200" height="200" alt="">
+            </div>
+            <div class="body">
+              <h5 class="text-secondary">H12</h5>
+              <p>Select this to shop from H12 General store</p>
+              <a href="/grocery_h10" class="btn btn-primary">Select</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card-service wow fadeInUp">
+            <div class="header">
+              <img src="{%static 'images/grocery/h18.png' %}" width="200" height="200" alt="">
+            </div>
+            <div class="body">
+              <h5 class="text-secondary">H18</h5>
+              <p>Select this to shop from H18 General store</p>
+              <a href="/grocery_h10"  name="id_value" class="btn btn-primary">Select</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- .container -->
+  </div> <!-- .page-section -->
+  <footer class="page-footer bg-image" style="background-image: url(../assets/img/world_pattern.svg);">
+    <div class="container">
+      <p class="text-center" id="copyright">Copyright &copy; 2021. This page is developed by  <a href="https://www.cse.iitb.ac.in/~vivekraj/" target="_blank">ADV</a></p>
+    </div>
+  </footer>
+</body>
+<!-- </html> -->
+{% endblock %}
