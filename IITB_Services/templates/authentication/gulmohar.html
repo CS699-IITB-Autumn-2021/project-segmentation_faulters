@@ -3,18 +3,27 @@
 
 
 {% block content %}
-    <div class="cartItem" style="padding: 0px 50px">
-                <style>
-                .cartItem{
+<script src="{% static '/javascript/gulmohar.js' %}"></script>
+        <style>
+                .band-name{
                     margin-top: 100px
                 }
                 
                 </style>
-                <div class="cart-row">
+                
+        <header class="main-header">
+                <h1 class="band-name band-name-large">GULMOHAR</h1></header>
+        <section class="content-section container">
+                <h2 class="section-header">Menu</h2>
+
+            <div class="cart-row">
                 <span class="cart-item cart-header cart-column">ITEM</span>
                 <span class="cart-price cart-header cart-column">UNIT PRICE</span>
                 <span class="cart-quantity cart-header cart-column">QUANTITY</span>
             </div>
+    
+            <div class="cartItem" style="padding: 0px 50px">
+                
                 {% for item in gul  %}
                 <div class="cart-row">
                     <div class="cart-item cart-column">
@@ -30,7 +39,12 @@
 
                 
                 {% endfor %}
+                <div class="cart-total">
+                    <strong class="cart-total-title">Total</strong>
+                    <span class="cart-total-price">₹0</span>
+                </div>
                 <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
             </div>
+        </section>
 {% endblock content %}
     

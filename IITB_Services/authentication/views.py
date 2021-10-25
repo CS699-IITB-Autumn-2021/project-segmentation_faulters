@@ -148,3 +148,16 @@ def hair(request):
 
 def hairsalon_admin(request):
     return render(request,'authentication/hairsalon_admin.html')
+
+def orderDone(request):
+    username= request.user.username
+    price= request.GET['price']
+    order_details=request.GET['list']
+    order_det=str(order_details).replace('!',' ')
+    vendor= request.GET['vendor']
+    order=Orders(username=username,order_details=order_det,Vendor=vendor,Price=price)
+    order.save()
+
+        # return render(request , "authentication/test.html" , {'order_details':order_details})
+    # return redirect('gulmohar')
+    return redirect('gulmohar')
