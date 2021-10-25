@@ -161,3 +161,9 @@ def orderDone(request):
         # return render(request , "authentication/test.html" , {'order_details':order_details})
     # return redirect('gulmohar')
     return redirect('gulmohar')
+
+def order(request):
+    fname= request.user.first_name
+    uname = request.user.username
+    o = Orders.objects.filter(username=uname)
+    return render(request , "authentication/myorder.html" , {'order':o , 'fname':fname})
