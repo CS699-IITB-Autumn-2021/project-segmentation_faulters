@@ -15,7 +15,8 @@
             <th scope="col">Sno</th>
             <th scope="col">First</th>
             <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Availability</th>
+            <th scope="col">Change Availability</th>
           </tr>
         </thead>
         <tbody>
@@ -26,7 +27,7 @@
 
                 {% csrf_token %}
             <tr>
-                <th scope="row">1</th>
+                <th scope="row">{{forloop.counter}}</th>
                 <td>{{item.item_name}}</td>
                 <td>{{item.price}}</td>
                 <td>{{item.availability}}</td>
