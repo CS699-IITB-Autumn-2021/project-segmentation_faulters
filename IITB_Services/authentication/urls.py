@@ -16,5 +16,6 @@ urlpatterns = [
     path('toggle',views.toggle,name="toggle"),
     path('hair',views.hair,name='hair'),
     path('hairsalon_admin',views.hairsalon_admin,name="hairsalon_admin"),
-
+    path('orderDone', views.orderDone , name='orderDone'),
+    path('order', views.order , name='order'),
 ]
