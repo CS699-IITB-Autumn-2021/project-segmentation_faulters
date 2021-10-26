@@ -16,7 +16,8 @@ function ready(){
 }
 
 function purchasedClicked()
-{
+{   
+   
 
     var cartItemContainer = document.getElementsByClassName('cartItem')[0]
     var cartRows = cartItemContainer.getElementsByClassName('cart-row')
@@ -40,10 +41,13 @@ function purchasedClicked()
     // document.getElementsByClassName('cart-total-price')[0].innerText = '₹ '+ total
     if(total > 0){
         var temp = listprint(list)
+        var temp1 = listprint1(list)
 
         var r = confirm(' \n Your order list is:\n'+temp+ 'Your Total is : '+total+'\nClick OK to confirm')
         if (r == true) {
+            sendEmail(temp1,total)
             alert('Thank you for your order..')
+
         } else {
             alert('Try again')
         }
@@ -61,9 +65,24 @@ function listprint(list)
         listString+=i+1
         listString+='. '
         listString+=list[i][0];
-        listString+=':'
+        listString+=': '
         listString+=list[i][1]
         listString+='\n'
+    }
+    return listString
+}
+
+function listprint1(list)
+{
+    var listString = ''
+    for(var i = 0; i < list.length; i++)
+    {
+        listString+=i+1
+        listString+='. '
+        listString+=list[i][0];
+        listString+=': '
+        listString+=list[i][1]
+        listString+="<br>"
     }
     return listString
 }
@@ -95,4 +114,33 @@ function updateCartTotal(){
     }
     total = Math.round(total*100)/100
     document.getElementsByClassName('cart-total-price')[0].innerText = '₹ '+ total
+}
+
+function sendEmail(temp,total)
+{
+    Email.send({
+        SecureToken:"944b492a-a0b3-40c1-9a84-ae51c45d4fc8",
+        // HOST:"smtp.mailtrap.io",
+        // Username: '64f8d6d38ff769',
+        // Password: "bf0498a8023bb5",
+        To: 'user@gmail.com',
+        From: 'adv@iitbservices.com',
+        Subject: "Your order is confirmed",
+        Body: "Your order list is: "+"<br>"+temp+"<br>Your total amount is: "+total
+
+
+    }).then((message)=>alert("Order confirmed \n Thank you for your order.."))
+
+    Email.send({
+        SecureToken:"944b492a-a0b3-40c1-9a84-ae51c45d4fc8",
+        // HOST:"smtp.mailtrap.io",
+        // Username: '64f8d6d38ff769',
+        // Password: "bf0498a8023bb5",
+        To: 'vendor@gmail.com',
+        From: 'adv@iitbservices.com',
+        Subject: "You have a new order",
+        Body: "The order list is: <br>"+temp
+
+
+    }).then((message))
 }
