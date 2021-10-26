@@ -1,17 +1,13 @@
 {% extends "authentication/base.html" %}
 {% load static %}
 
-{% block content %}
-<script src="{% static '/javascript/grocery_h10.js' %}"></script>
-<h3 style="color: red; text-align:center; margin-top:70px;"></h3>
 
-{% endblock %}
 
         {% block conten %}
         <header class="main-header">
-            <h1 class="band-name band-name-large">{{name}}Store</h1></header>
-        <section class="content-section container">
-            <h2 class="section-header">Menu</h2>
+            <h1 class="band-name band-name-large">H10 Store</h1></header>
+        <section method="post" class="content-section container">
+            <h2 class="section-header">Menu {{name}}</h2>
        
             <div class="cart-row">
                 <span class="cart-item cart-header cart-column">ITEM</span>
@@ -20,6 +16,7 @@
             </div>
             
             <div class="cartItem">
+                
 
                 <div class="cart-row">
                     <div class="cart-item cart-column">
@@ -146,7 +143,18 @@
                     <strong class="cart-total-title">Total</strong>
                     <span class="cart-total-price">₹0</span>
                 </div>
-                <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+                <button action="javascript:sendmail()" class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
             </div>
         </section>
         {% endblock %}
+
+        {% block content %}
+
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+
+<script src="{% static '/javascript/grocery_h10.js' %}"></script>
+<h3 style="color: red; text-align:center; margin-top:70px;"></h3>
+
+       
+{% endblock %}
