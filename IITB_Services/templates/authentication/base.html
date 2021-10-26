@@ -16,7 +16,7 @@
 
         <link rel="stylesheet" href="{%static 'css/bootstrap.css' %}">
         <link rel="stylesheet" href="{%static 'css/grocery_h10.css' %}">
-        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
         <link rel="stylesheet" href="{%static 'css/theme.css' %}">
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
@@ -52,7 +52,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/signout">Signout</a>
                       </li>
-                    
+                    <li class="nav-item">
+                      <a class="nav-link" href="/order">MY Orders</a>
+                    </li>
                   </ul>
                   
                 </div>
@@ -66,6 +68,11 @@
         {% block conten %}
             
         {% endblock conten %}
+
+
+          {% block footer %}
+          
+          {% endblock footer %}
     
     </body>
 </html>
