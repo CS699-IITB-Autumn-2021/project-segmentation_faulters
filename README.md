@@ -30,6 +30,7 @@ Team Members:
 7. Well explained, “how to operate”.
 
 8. Primary stakeholders of the product/service built
+    -> The residence IITB and the students living in the hostels of IITB.
 
 9. Team details along with the contribution.
 
