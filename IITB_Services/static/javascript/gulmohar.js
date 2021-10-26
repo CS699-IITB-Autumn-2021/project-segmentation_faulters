@@ -45,8 +45,12 @@ function purchasedClicked()
         if (r == true) {
             alert('Thank you for your order..')
             var vendor="Gulmohar"
-            console.log(temp)
+            var email = document.getElementsByClassName("email")[0].innerHTML
+            console.log(email)
+            sendEmail(orderd,total,email)
+            console.log("hello")
             window.location.href= "/orderDone?price="+total+"&list="+orderd+"&vendor="+vendor;
+            
         } else {
             alert('Try again')
         }
@@ -110,4 +114,34 @@ function updateCartTotal(){
     }
     total = Math.round(total*100)/100
     document.getElementsByClassName('cart-total-price')[0].innerText = '₹ '+ total
+}
+
+function sendEmail(temp,total,email)
+{
+    Email.send({
+        
+        SecureToken:"944b492a-a0b3-40c1-9a84-ae51c45d4fc8",
+        // HOST:"smtp.mailtrap.io",
+        // Username: '64f8d6d38ff769',
+        // Password: "bf0498a8023bb5",
+        To: email,
+        From: 'adv@iitbservices.com',
+        Subject: "Your order is confirmed",
+        Body: "Your order list is: "+"<br>"+temp+"<br>Your total amount is: "+total
+
+
+    }).then((message)=>alert("Order confirmed \n Thank you for your order.."))
+
+    Email.send({
+        SecureToken:"944b492a-a0b3-40c1-9a84-ae51c45d4fc8",
+        // HOST:"smtp.mailtrap.io",
+        // Username: '64f8d6d38ff769',
+        // Password: "bf0498a8023bb5",
+        To: 'vendor@gmail.com',
+        From: 'adv@iitbservices.com',
+        Subject: "You have a new order",
+        Body: "The order list is: <br>"+temp
+
+
+    }).then()
 }

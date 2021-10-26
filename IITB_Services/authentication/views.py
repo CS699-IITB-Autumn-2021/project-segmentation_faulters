@@ -156,7 +156,8 @@ def base(request):
 
 def gulmohar(request):
     g= Gulmohar.objects.all()
-    return render(request,'authentication/gulmohar.html',{'gul':g } )
+    email = request.user.email
+    return render(request,'authentication/gulmohar.html',{'gul':g,'email':email } )
 
 
 def hair(request):
