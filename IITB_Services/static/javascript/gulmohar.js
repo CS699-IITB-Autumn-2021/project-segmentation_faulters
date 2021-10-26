@@ -40,13 +40,13 @@ function purchasedClicked()
     // document.getElementsByClassName('cart-total-price')[0].innerText = '₹ '+ total
     if(total > 0){
         var temp = listprint(list)
-
+        var orderd= orderdetails(list)
         var r = confirm(' \n Your order list is:\n'+temp+ 'Your Total is : '+total+'\nClick OK to confirm')
         if (r == true) {
             alert('Thank you for your order..')
             var vendor="Gulmohar"
             console.log(temp)
-            window.location.href= "/orderDone?price="+total+"&list="+temp+"&vendor="+vendor;
+            window.location.href= "/orderDone?price="+total+"&list="+orderd+"&vendor="+vendor;
         } else {
             alert('Try again')
         }
@@ -66,7 +66,19 @@ function listprint(list)
         listString+=list[i][0];
         listString+=':'
         listString+=list[i][1]
-        listString+="!"
+        listString+="\n"
+    }
+    return listString
+}
+function orderdetails(list)
+{
+    var listString = ''
+    for(var i = 0; i < list.length; i++)
+    {
+        listString+=list[i][0];
+        listString+=':'
+        listString+=list[i][1]
+        listString+="!,"
     }
     return listString
 }

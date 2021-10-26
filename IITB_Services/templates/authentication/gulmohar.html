@@ -25,6 +25,9 @@
             <div class="cartItem" style="padding: 0px 50px">
                 
                 {% for item in gul  %}
+
+                
+                {% if item.availability %}
                 <div class="cart-row">
                     <div class="cart-item cart-column">
                         <img class="cart-item-image" src={{item.image_src.url}} width="100" height="100">
@@ -36,6 +39,9 @@
                         <button class="btn btn-danger" type="button"  onclick="deleteClick('item1')">REMOVE</button>
                     </div>
                 </div>
+                {% endif %}
+                    
+                
 
                 
                 {% endfor %}

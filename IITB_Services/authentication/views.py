@@ -26,6 +26,23 @@ def toggle(request):
     return redirect("gulmohar_updation")
 
 
+def hoggle(request):
+    print("you are here")
+    orderid = request.POST['item']
+    print(orderid)
+    g=Orders.objects.get(order_id=orderid)
+
+    check = g.Order_completed
+    
+    if check==True:
+        g.Order_completed = False
+    else:
+        g.Order_completed=True
+
+    g.save()
+
+    return redirect("ordercompletion")
+
 # Create your views here.
 def home(requests):
     
@@ -34,7 +51,8 @@ def home(requests):
 
 def gulmohar_updation(request):
     g = Gulmohar.objects.all()
-    return render(request,'authentication/gulmohar_updation.html',{'gul':g})
+    fname = request.user.first_name
+    return render(request,'authentication/gulmohar_updation.html',{'gul':g , 'fname':fname})
 
 
 def grocery(request):
@@ -167,3 +185,8 @@ def order(request):
     uname = request.user.username
     o = Orders.objects.filter(username=uname)
     return render(request , "authentication/myorder.html" , {'order':o , 'fname':fname})
+
+def ordercompletion(request):
+    if request.user.username=='gulmohar':
+        o=Orders.objects.filter(Vendor='Gulmohar')
+        return render(request,"authentication/ordercom.html",{'orders':o})

@@ -6,39 +6,39 @@
         .hello{
             margin-top: 100px;
         }
-        a{
-          float: right;
-          margin-right: 20px;
-        }
+        
         h1{
           text-align: center;
         }
     </style>
     <h1 class="hello">Hello {{fname}}</h1>
-    <a class="btn btn-primary" href="/ordercompletion" role="button">Orders</a>
+    
     <table class="table table-borderless">
         <thead>
           <tr>
-            <th scope="col">Sno</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Availability</th>
-            <th scope="col">Change Availability</th>
+            <th scope="col">order_id</th>
+            <th scope="col">Coustmer Username</th>
+            <th scope="col">Order Details</th>
+            <th scope="col">Price</th>
+            <th scope="col">Order completion Status</th>
+            <th scope="col">Changle completion Status</th>
+
           </tr>
         </thead>
         <tbody>
 
            
-            {% for item in gul %}
-            <form method="POST" action="toggle">
+            {% for order in orders %}
+            <form method="POST" action="hoggle">
 
                 {% csrf_token %}
             <tr>
-                <th scope="row">{{forloop.counter}}</th>
-                <td>{{item.item_name}}</td>
-                <td>{{item.price}}</td>
-                <td>{{item.availability}}</td>
-                <input type="hidden" name="item" value="{{item.item_name}}"  />
+                <th scope="row">{{order.order_id}}</th>
+                <td>{{order.username}}</td>
+                <td>{{order.order_details}}</td>
+                <td>{{order.Price}}</td>
+                <td>{{order.Order_completed}}</td>
+                <input type="hidden" name="item" value="{{order.order_id}}"  />
                 <td><input type="submit" value="Toggle" > </td>
               </tr>
             </form>
