@@ -67,6 +67,17 @@ def grocery_h10(request):
     return render(request,"authentication/grocery_h10.html")
 
 
+def grocery_h12(request):
+    if request.user.is_anonymous:
+        return redirect('home')
+    return render(request,"authentication/grocery_h12.html")
+
+
+def grocery_h18(request):
+    if request.user.is_anonymous:
+        return redirect('home')
+    return render(request,"authentication/grocery_h18.html")
+
 
 
 def afterlogin(request):
