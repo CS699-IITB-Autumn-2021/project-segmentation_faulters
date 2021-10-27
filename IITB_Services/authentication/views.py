@@ -190,8 +190,12 @@ def orderDone(request):
 
         # return render(request , "authentication/test.html" , {'order_details':order_details})
     # return redirect('gulmohar')
-    return redirect('gulmohar')
-
+    if vendor=='Gulmohar':
+        return redirect('gulmohar')
+    elif vendor == 'Grocery':
+        return redirect('grocery')
+    elif vendor =='HairSalon':
+        return redirect('hair')
 def order(request):
     fname= request.user.first_name
     uname = request.user.username

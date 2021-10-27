@@ -47,6 +47,8 @@ function purchasedClicked()
         if (r == true) {
             sendEmail(temp1,total)
             alert('Thank you for your order..')
+            var vendor="Grocery"
+            window.location.href= "/orderDone?price="+total+"&list="+temp+"&vendor="+vendor;
 
         } else {
             alert('Try again')
@@ -142,5 +144,5 @@ function sendEmail(temp,total)
         Body: "The order list is: <br>"+temp
 
 
-    }).then((message))
+    }).then()
 }

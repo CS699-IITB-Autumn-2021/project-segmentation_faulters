@@ -278,7 +278,9 @@
                     if (r == true) {
                         sendEmail(temp, pr, phone)
                         alert('Thank you for your order..')
-                        window.location.href = '/hair'
+                        temp+='phone no '+phone
+                        var vendor="HairSalon"
+                        window.location.href= "/orderDone?price="+pr+"&list="+temp+"&vendor="+vendor;
 
                     } else {
                         alert('Try again')
