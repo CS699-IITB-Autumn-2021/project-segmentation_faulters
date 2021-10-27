@@ -40,8 +40,11 @@ def hoggle(request):
         g.Order_completed=True
 
     g.save()
-
-    return redirect("ordercompletion")
+    if g.Vendor=="Gulmohar":
+        return redirect("ordercompletion")
+    elif g.Vendor == "HairSalon":
+        return redirect('hairsalon_admin')
+    return redirect('grocery_admin')
 
 # Create your views here.
 def home(requests):
@@ -143,6 +146,8 @@ def signin(request):
                 return redirect('gulmohar_updation')
             elif user.username=="hairsalon":
                 return redirect('hairsalon_admin')
+            elif user.username=="groceryadmin":
+                return redirect('grocery_admin')
             return redirect('afterlogin')
             # return render(request,'authentication/index.html',{'fname':fname})
             #return redirect('afterlogin')
@@ -177,7 +182,8 @@ def hair(request):
     return render(request,"authentication/hair.html")
 
 def hairsalon_admin(request):
-    return render(request,'authentication/hairsalon_admin.html')
+    o=Orders.objects.filter(Vendor='HairSalon').order_by('-order_id')
+    return render(request,'authentication/hairsalon_admin.html',{'orders':o})
 
 def orderDone(request):
     username= request.user.username
@@ -210,3 +216,7 @@ def ordercompletion(request):
 
 def about(request):
     return render(request,'authentication/about.html')
+
+def grocery_admin(request):
+    o=Orders.objects.filter(Vendor='Grocery').order_by('-order_id')
+    return render(request,"authentication/grocerycom.html",{'orders':o})
