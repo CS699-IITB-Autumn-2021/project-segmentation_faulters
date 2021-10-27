@@ -19,6 +19,7 @@
             <th scope="col">order_id</th>
             <th scope="col">Coustmer Username</th>
             <th scope="col">Order Details</th>
+            <th scope="col">Time</th>
             <th scope="col">Price</th>
             <th scope="col">Order completion Status</th>
             <th scope="col">Changle completion Status</th>
@@ -36,6 +37,8 @@
                 <th scope="row">{{order.order_id}}</th>
                 <td>{{order.username}}</td>
                 <td>{{order.order_details}}</td>
+                <td>{{order.order_time}}</td>
+
                 <td>{{order.Price}}</td>
                 <td>{{order.Order_completed}}</td>
                 <input type="hidden" name="item" value="{{order.order_id}}"  />

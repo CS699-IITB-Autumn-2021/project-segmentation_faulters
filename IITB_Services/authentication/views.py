@@ -200,7 +200,7 @@ def order(request):
 
 def ordercompletion(request):
     if request.user.username=='gulmohar':
-        o=Orders.objects.filter(Vendor='Gulmohar')
+        o=Orders.objects.filter(Vendor='Gulmohar').order_by('-order_id')
         return render(request,"authentication/ordercom.html",{'orders':o})
 
 

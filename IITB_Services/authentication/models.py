@@ -16,6 +16,7 @@ class Orders(models.Model):
     order_id = models.AutoField(primary_key=True)
     username = models.CharField(max_length=30, default="hello")
     order_details=models.CharField(max_length=500)
+    order_time= models.DateTimeField(auto_now_add=True)
     Vendor = models.CharField(max_length=50)
     Price = models.IntegerField()
     Order_completed = models.BooleanField(default= False)
