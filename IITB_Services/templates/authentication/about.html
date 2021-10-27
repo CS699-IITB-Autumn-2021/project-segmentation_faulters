@@ -1,0 +1,74 @@
+{% extends 'authentication/base.html' %} {% load static %}
+
+
+{% block content %}
+    
+    <style>
+       body{
+        background: rgb(208,208,208);
+background: radial-gradient(circle, rgba(208,208,208,1) 0%, rgba(255,255,255,1) 0%, rgba(97,155,166,1) 100%);
+       }
+       .container{
+           margin-top: 250px;
+       }
+       a{
+           margin:10px
+       }
+       p{
+           color: black;
+       }
+       h1{
+           text-align: center;
+           font-weight: bolder;
+       }
+       
+    </style>
+    <script src="https://kit.fontawesome.com/64794a3536.js" crossorigin="anonymous"></script>
+    
+    <div class="container">
+        <h1>Developers</h1>
+        <div class="row">
+            <div class="col-lg-4 " style="padding: 5px;">
+                <div class="card-service wow fadeInUp rounded border border-dark" style="padding: 5px;">
+                    <div class="header">
+                        <center><img src="{% static 'images/Dishank1.jpg' %}" alt="" class="rounded-circle" height="200px" width="200px"></center>
+                    </div>
+                    <div class="body">
+                        <h5  style="text-align: center; color:black;font-weight:bold;">Dishank Aggarwal</h5>
+                        <p class="text-center">I am a MS RAP student under SAFE project at IIT Bombay.</p>
+                        <a href="https://www.linkedin.com/in/dishank-aggarwal-270ab3136/" class="fa fa-linkedin" target="_blank"></a>
+                        <a href="https://www.instagram.com/dishankaggarwal/" class="fa fa-instagram" target="_blank"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 " style="padding: 5px;">
+                <div class="card-service wow fadeInUp rounded border border-dark" style="padding: 5px;">
+                    <div class="header">
+                        <center><img src="{% static 'images/ashish.jpg' %}" alt="" class="rounded-circle" height="200px" width="200px"></center>
+                    </div>
+                    <div class="body">
+                        <h5  style="text-align: center; color:black;font-weight:bold;">Ashish Verma</h5>
+                        <p class="text-center">I am pursuing Mtech in computer science from IIT Bombay</p>
+                        <a href="https://www.linkedin.com/in/ashishvermaiitb/" class="fa fa-linkedin" target="_blank"></a>
+                        <a href="https://www.instagram.com/ashish_verma_19/" class="fa fa-instagram" target="_blank"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 " style="padding: 5px;">
+                <div class="card-service wow fadeInUp rounded border border-dark" style="padding: 5px; ">
+                    <div class="header">
+                        <center><img src="{% static 'images/vivek.png' %}" alt="" class="rounded-circle" height="200px" width="200px"></center>
+                    </div>
+                    <div class="body">
+                        <h5  style="text-align: center; color:black;font-weight:bold;">Vivek Raj</h5>
+                        <p class="text-center">I am pursuing Mtech in computer science from IIT Bombay</p>
+                        <a href="https://www.linkedin.com/in/vivek-raj-b91352142" class="fa fa-linkedin" target="_blank">  </a>
+                        <a href="https://www.instagram.com/vivekraj7571/" class="fa fa-instagram" target="_blank"></a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+{% endblock content %}
+    

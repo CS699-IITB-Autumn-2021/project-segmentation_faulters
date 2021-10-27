@@ -21,5 +21,6 @@ urlpatterns = [
     path('orderDone', views.orderDone , name='orderDone'),
     path('order', views.order , name='order'),
     path('ordercompletion',views.ordercompletion,name="ordercompletion"),
-    path('hoggle',views.hoggle,name='hoggle')
+    path('hoggle',views.hoggle,name='hoggle'),
+    path('about',views.about,name='about'),
 ]

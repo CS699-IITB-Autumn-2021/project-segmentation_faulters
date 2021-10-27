@@ -195,10 +195,14 @@ def orderDone(request):
 def order(request):
     fname= request.user.first_name
     uname = request.user.username
-    o = Orders.objects.filter(username=uname)
+    o = Orders.objects.filter(username=uname).order_by('-order_id')
     return render(request , "authentication/myorder.html" , {'order':o , 'fname':fname})
 
 def ordercompletion(request):
     if request.user.username=='gulmohar':
         o=Orders.objects.filter(Vendor='Gulmohar')
         return render(request,"authentication/ordercom.html",{'orders':o})
+
+
+def about(request):
+    return render(request,'authentication/about.html')
