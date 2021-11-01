@@ -11,61 +11,60 @@ Team Members:
 
 
 1. Problem Statement or Motivation:
-    ->  Fulfilling all the student's and IITB resident's needs at one place 
+    1.  Fulfilling all the student's and IITB resident's needs at one place 
         will help students and residents of IITB to save their precious time.       
         They just need to use our platform in order to use the services.This
         will also helps vendor to bring in more costumers.
 
 2. Sell your product/service (One sentence).
-    -> Connecting all the offline services to online to make life easy for the students and the residents of IITB.
+    1. Connecting all the offline services to online to make life easy for the students and the residents of IITB.
 
 3. List of features
-    ->Login
-    ->Signup
-    ->Signout
-    ->My Orders
-    ->Place order
-    ->Mail confirmation
-    ->Gulmohar
-    ->Grocery
-    ->Hair Salon
-    ->about page
-    ->Vendor side pages for all the vendors: Gulmohar, Hairsalon and Grocery.
+    1. Login
+    2. Signup
+    3. Signout
+    4. My Orders
+    5. Place order
+    6. Mail confirmation
+    7. Gulmohar
+    8. Grocery
+    9. Hair Salon
+    10. about page
+    11. Vendor side pages for all the vendors: Gulmohar, Hairsalon and Grocery.
 
 4. Technology Stack (highlight ones learnt in CS699)
-    -> Pyhton
-    -> Sphinx
-    -> HTML, CSS, JavaScript
-    -> Sqlite3
-    -> MailTrap
+    1. Pyhton
+    2. Sphinx
+    3. HTML, CSS, JavaScript
+    4. Sqlite3
+    5. MailTrap
 
 5. List of deliverables (tick mark those which are complete).
-    ▶ Secure Login and Register functionality(HOME PAGE).(DONE)
-    ▶ Interface for student: In order to use the services available.(DONE)
-    ▶ Interface for Gulmohar: We will provide a cart option, where
+    1. Secure Login and Register functionality(HOME PAGE).(DONE)
+    2. Interface for student: In order to use the services available.(DONE)
+    3. Interface for Gulmohar: We will provide a cart option, where
         student can select item present at Gulmohar and then order from
         the interface.(DONE)
-    ▶ Interface for Hair Salon: We will provide a google form like
+    4. Interface for Hair Salon: We will provide a google form like
         functionality , on filling the form a mail will be sent to the Hair
         Cutting shop manager and he will call according to availability of
         slot.(DONE)
-    ▶ Interface for grocery Shop: We will again provide a cart thing
+    5. Interface for grocery Shop: We will again provide a cart thing
         where student or residents can order the daily needs then confirm
         the order.(DONE)
-    ▶ We are also going to link some services which are already present
+    6. We are also going to link some services which are already present
         online like aroma , badminton court facilities.(DONE)
 
 6. Hardware/Software Requirements.
-    -> Hardware:
+    1. Hardware:
         Any Pc with Windows or Linux
-    -> Software:
+    2. Software:
         Python, Django and web Browser
 
 7. Well explained, “how to operate”.
 
     1. To get started with the project you should first run the virtual environment that is "venv" with the command source venv/bin/activate
     2. Then start the server with the command python3 IITB_Services/manage.py runserver
-    -> Note:Don't connect with IITB network , connect with your personal network to see the email functionality.
     3. First page is the login and sign up page on which user has to login or register
     4. After login the user has to choose the services from the list of services.
     5. Gulmohar : user can order the dishes that are available at that time and when user click on purchase button a mail will be sent       to both the user and the gulmohar email about the order detals.
@@ -84,7 +83,7 @@ Team Members:
     
 
 8. Primary stakeholders of the product/service built
-    -> The residence IITB and the students living in the hostels of IITB.
+    1. The residence IITB and the students living in the hostels of IITB.
 
 9. Team details along with the contribution.
     Team Members:
@@ -93,15 +92,15 @@ Team Members:
         : Ashish Verma (213050058)
     
     Contribution:
-        ▶ Gulmohar Interface is completed by Dishank
-        ▶ Grocery Interface is completed by Vivek
-        ▶ HairSalon Interface is completed by Ashish
-        ▶ Homepage is completed by Dishank, Ashish , Vivek
-        ▶ login and authentication is done by Dishank
-        ▶ Email feature is done by Vivek
-        ▶ Database is manage by Dishank
-        ▶ Vendor side page is manage by Ashish
-        ▶ About page is completed by Vivek
+        1. Gulmohar Interface is completed by Dishank
+        2. Grocery Interface is completed by Vivek
+        3. HairSalon Interface is completed by Ashish
+        4. Homepage is completed by Dishank, Ashish , Vivek
+        5. login and authentication is done by Dishank
+        6. Email feature is done by Vivek
+        7. Database is manage by Dishank
+        8. Vendor side page is manage by Ashish
+        9. About page is completed by Vivek
 
 
 10. Path to Code Documentation (index.html).
