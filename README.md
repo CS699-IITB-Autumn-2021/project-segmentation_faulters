@@ -86,12 +86,12 @@ Team Members:
     1. The residence IITB and the students living in the hostels of IITB.
 
 9. Team details along with the contribution.
-    Team Members:
+    i. Team Members:
         : Dishank Aggarwal (21q05r003)
         : Vivek Raj (213050053)
         : Ashish Verma (213050058)
     
-    Contribution
+    ii. Contribution:
         1. Gulmohar Interface is completed by Dishank
         2. Grocery Interface is completed by Vivek
         3. HairSalon Interface is completed by Ashish
