@@ -91,7 +91,7 @@ Team Members:
         : Vivek Raj (213050053)
         : Ashish Verma (213050058)
     
-    Contribution:
+    Contribution
         1. Gulmohar Interface is completed by Dishank
         2. Grocery Interface is completed by Vivek
         3. HairSalon Interface is completed by Ashish
